@@ -12,9 +12,12 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "vinext dev",
-    "build": "vinext build",
-    "start": "vinext start",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "dev:cloudflare": "vinext dev",
+    "build:cloudflare": "vinext build",
+    "start:cloudflare": "vinext start",
     "doctor": "node --env-file-if-exists=.env.local scripts/doctor.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern coverage",
     "typecheck": "tsc --noEmit",
@@ -23,7 +26,7 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "next": "16.3.2",
+    "next": "16.4.2",
     "qrcode.react": "4.2.0",
     "react": "19.2.8",
     "react-dom": "19.2.8"
@@ -42,7 +45,7 @@
     "@vitejs/plugin-rsc": "0.5.34",
     "@vitest/coverage-v8": "^4.1.11",
     "eslint": "9.39.4",
-    "eslint-config-next": "16.3.2",
+    "eslint-config-next": "16.4.2",
     "react-server-dom-webpack": "19.2.8",
     "tailwindcss": "4.3.3",
     "typescript": "5.9.3",
@@ -50,6 +53,9 @@
     "vite": "8.2.2",
     "vitest": "^4.1.11",
     "wrangler": "4.125.0"
+  },
+  "overrides": {
+    "source-map-js": "1.2.2"
   },
   "type": "module"
 }

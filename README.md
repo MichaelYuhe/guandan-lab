@@ -56,6 +56,22 @@ npm run dev
 
 打开 `http://localhost:3000`。所有第三方 AI/TTS 配置都是可选项，没有密钥也能完成完整本地训练。
 
+## 部署到 Vercel
+
+本分支默认使用原生 Next.js 命令，已可直接部署到 Vercel：
+
+```bash
+npm ci
+npm run typecheck
+npm test
+npm run build
+npx vercel deploy --prod
+```
+
+无需环境变量即可使用完整的新手课程、本地 AI 对局、记牌训练和浏览器本地存档。Vercel 的 Serverless 文件系统不适合 SQLite 持久化，因此不要在 Vercel 上设置 `DATABASE_PATH`；Google 登录、跨设备云存档和真人匹配保持关闭。需要这些服务端能力时，请按下方 Docker 部署方式使用持久卷，或先把 SQLite 存储层替换成外部数据库。
+
+原项目的 Cloudflare/vinext 命令仍保留为 `npm run dev:cloudflare`、`npm run build:cloudflare` 和 `npm run start:cloudflare`。
+
 Docker：
 
 ```bash
